@@ -24,18 +24,12 @@ const Login = () => {
         }
         );
 
-    //   console.log('Response:', response.data); // Log the response data
-    //   localStorage.setItem('token', response.data.token);
-    //   navigate('/dashboard');
-    // } catch (error) {
-    //   console.error('Error:', error); // Log the error
-    //   alert('Invalid credentials');
-    // }
+   
     const data = await response.json();
     if (response.ok) {
       localStorage.setItem('token', data.token);
       navigate('/dashboard');
-      // Redirect or show success message
+     
     } else {
       console.error('Login error:', data.message);
     }
