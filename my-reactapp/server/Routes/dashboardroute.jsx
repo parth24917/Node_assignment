@@ -3,7 +3,6 @@ app.get('/dashboard', authenticateJWT, async (req, res) => {
   res.json(user);
 });
 
-// JWT middleware to authenticate
 const authenticateJWT = (req, res, next) => {
   const token = req.headers.authorization.split(' ')[1];
   if (!token) return res.status(403).send('Token missing');
