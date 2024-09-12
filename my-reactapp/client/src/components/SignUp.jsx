@@ -9,7 +9,7 @@ const SignUp = () => {
   const handleSignUp = async (e) => {
     e.preventDefault();
 
-    // Create FormData to send the data, including the image
+   
     const formData = new FormData();
     formData.append('email', email);
     formData.append('password', password);
@@ -19,7 +19,7 @@ const SignUp = () => {
       const response = await axios.post('http://localhost:5000/api/auth/signup', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
-      alert(response.data.message); // Show success message
+      alert(response.data.message); 
     } catch (error) {
       alert('Error signing up');
     }
